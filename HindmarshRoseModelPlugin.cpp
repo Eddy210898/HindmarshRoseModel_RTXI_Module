@@ -181,7 +181,7 @@ double HindmarshRoseModelPlugin::getNextRungeKuta(double Xo, double Yo, double d
   double newValToAdd = (dX * kT) / 6;
   return Yo + newValToAdd;
 }
-void hindmarshRoseStep(double xO, double yO, double zO, double xOr, double t, double dT, double I, double a, double b, double c, double d, double r, double s)
+void HindmarshRoseModelPlugin::hindmarshRoseStep(double xO, double yO, double zO, double xOr, double t, double dT, double I, double a, double b, double c, double d, double r, double s)
 {
   double arg[] = {
       a,   //0
