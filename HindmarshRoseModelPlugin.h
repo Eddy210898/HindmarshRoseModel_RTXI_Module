@@ -35,18 +35,19 @@ public:
   void execute(void);
   void createGUI(DefaultGUIModel::variable_t *, int);
   void customizeGUI(void);
-
-protected:
   //Variables para el modelo
 
   double x, y, z, a, b, c, d, r, s, xO;
 
   //Variable de entorno de ejecucion
   double I, dt;
-  double period;
+
+protected:
   virtual void update(DefaultGUIModel::update_flags_t);
 
 private:
+  double period;
+
   void initParameters();
   double getYValue(int kValue, double y, double dX, double k = 0);
   double getXValue(int kValue, double x, double dX);
