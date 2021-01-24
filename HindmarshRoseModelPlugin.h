@@ -23,28 +23,36 @@
 
 #include <default_gui_model.h>
 
-class PluginTemplate : public DefaultGUIModel
+class HindmarshRoseModelPlugin : public DefaultGUIModel
 {
 
   Q_OBJECT
 
 public:
-  PluginTemplate(void);
-  virtual ~PluginTemplate(void);
+  HindmarshRoseModelPlugin(void);
+  virtual ~HindmarshRoseModelPlugin(void);
 
   void execute(void);
-  void createGUI(DefaultGUIModel::variable_t*, int);
+  void createGUI(DefaultGUIModel::variable_t *, int);
   void customizeGUI(void);
 
 protected:
   virtual void update(DefaultGUIModel::update_flags_t);
 
 private:
-  double some_parameter;
-  double some_state;
+  //Variables para el modelo
+
+  double x, y, z, a, b, c, d, r, s, xO;
+
+  //Variable de entorno de ejecucion
+  double I, dt;
   double period;
 
   void initParameters();
+  double getYValue(int kValue, double y, double dX, double k = 0);
+  double getXValue(int kValue, double x, double dX);
+  double getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[]);
+  void hindmarshRoseStep(double xO, double yO, double zO, double t, double dT, double I, double a, double b, double c, double d, double r, double s);
 
 private slots:
   // these are custom functions that can also be connected to events

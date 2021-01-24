@@ -1,9 +1,9 @@
-PLUGIN_NAME = plugin_template
+PLUGIN_NAME = HindmarshRoseModelPlugin
 
-HEADERS = plugin-template.h
+HEADERS = HindmarshRoseModelPlugin.h
 
-SOURCES = plugin-template.cpp\
-          moc_plugin-template.cpp\
+SOURCES = HindmarshRoseModelPlugin.cpp\
+          moc_HindmarshRoseModelPlugin.cpp\
 
 LIBS = 
 
