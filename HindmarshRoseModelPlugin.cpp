@@ -219,9 +219,9 @@ void hindmarshRoseStep(double xO, double yO, double zO, double xOr, double t, do
       },
       arg);
 
-  HindmarshRoseModelPlugin::x = xF;
-  HindmarshRoseModelPlugin::y = yF;
-  HindmarshRoseModelPlugin::z = zF;
+  x = xF;
+  y = yF;
+  z = zF;
 }
 
 void HindmarshRoseModelPlugin::execute(void)
