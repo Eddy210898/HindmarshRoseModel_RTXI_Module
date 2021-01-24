@@ -37,9 +37,6 @@ public:
   void customizeGUI(void);
 
 protected:
-  virtual void update(DefaultGUIModel::update_flags_t);
-
-private:
   //Variables para el modelo
 
   double x, y, z, a, b, c, d, r, s, xO;
@@ -47,12 +44,14 @@ private:
   //Variable de entorno de ejecucion
   double I, dt;
   double period;
+  virtual void update(DefaultGUIModel::update_flags_t);
 
+private:
   void initParameters();
   double getYValue(int kValue, double y, double dX, double k = 0);
   double getXValue(int kValue, double x, double dX);
   double getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[]);
-  void hindmarshRoseStep(double xO, double yO, double zO, double t, double dT, double I, double a, double b, double c, double d, double r, double s);
+  void hindmarshRoseStep(double xO, double yO, double zO, double xOR, double t, double dT, double I, double a, double b, double c, double d, double r, double s);
 
 private slots:
   // these are custom functions that can also be connected to events

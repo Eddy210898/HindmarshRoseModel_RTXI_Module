@@ -200,7 +200,7 @@ void hindmarshRoseStep(double xO, double yO, double zO, double xOr, double t, do
       t, xO, dT, [](double t, double x, double args[]) {
         double sE = args[0] * x * x * x;
         double tE = args[1] * x * x;
-        return arg[6] - sE + tE + args[8] - args[7];
+        return args[6] - sE + tE + args[8] - args[7];
       },
       arg);
 
