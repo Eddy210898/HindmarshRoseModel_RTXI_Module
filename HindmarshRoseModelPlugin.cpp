@@ -244,6 +244,7 @@ void HindmarshRoseModelPlugin::initParameters(void)
   xO = x;
   y = 1 - (5 * x * x);
   z = s * (x + 1.6);
+  dt = 0.1;
 }
 
 void HindmarshRoseModelPlugin::update(DefaultGUIModel::update_flags_t flag)
