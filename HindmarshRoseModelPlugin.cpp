@@ -226,6 +226,10 @@ void HindmarshRoseModelPlugin::hindmarshRoseStep(double xO, double yO, double zO
 
 void HindmarshRoseModelPlugin::execute(void)
 {
+  if (iD)
+  {
+    I = input(0);
+  }
   hindmarshRoseStep(x, y, z, xO, period, dt, I, a, b, c, d, r, s);
   output(0) = x;
   return;
@@ -283,6 +287,14 @@ void HindmarshRoseModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     x = getParameter("x0").toDouble();
     y = getParameter("y0").toDouble();
     z = getParameter("z0").toDouble();
+    if (I < 0)
+    {
+      iD = true;
+    }
+    else
+    {
+      iD = false;
+    }
     break;
 
   case UNPAUSE:

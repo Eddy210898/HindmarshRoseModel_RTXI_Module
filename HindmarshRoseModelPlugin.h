@@ -47,6 +47,8 @@ private:
   //Variable de entorno de ejecucion
   double I, dt;
   double period;
+  //flag para saber de donde se estimula
+  bool iD = false;
 
   void initParameters();
   double getYValue(int kValue, double y, double dX, double k = 0);
